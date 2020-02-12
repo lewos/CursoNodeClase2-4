@@ -5,7 +5,7 @@ npm i -D nodemon
 '.\node_modules\.bin\nodemon' .
 
 
------------Mongo DB-----------
+-----------Mongo DB----------- ver mongoAtlas y heroku
 bajar mongodb community
 agregar al path
 //para levantar la base de datos (mongoD)
