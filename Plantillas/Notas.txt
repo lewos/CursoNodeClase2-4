@@ -1,0 +1,31 @@
+//para instalar una dependencia de desarrollo
+npm i -D nodemon
+
+//para usar el nodemon de la version de desarrollo
+'.\node_modules\.bin\nodemon' .
+
+
+-----------Mongo DB-----------
+bajar mongodb community
+agregar al path
+//para levantar la base de datos (mongoD)
+ para ejecutar mongoD tbm necesitamos que en el lugar donde se esta ejecutando este con C:/data/db o con
+mongod --dbpath "E:\CursoNodeClase2-4\mongoBase"
+//y dsp 
+mongo
+    db
+    show dbs
+    use mibase
+    // insertar un documento
+    db.usuarios.insert({nombre:'Juan',edad:32})
+    //inser varios
+    db.usuarios.insertMany([{nombre:'Pedro',edad:24},{nombre:'Lucia',edad:25}])
+
+    //
+    show collections
+    //buscar
+    db.usuarios.find()
+    db.usuarios.find().limit(2)
+    db.usuarios.find().pretty()
+
+//node interactua con la db de mongo con una libreria por ejemplo mongose
