@@ -20,12 +20,36 @@ mongo
     db.usuarios.insert({nombre:'Juan',edad:32})
     //inser varios
     db.usuarios.insertMany([{nombre:'Pedro',edad:24},{nombre:'Lucia',edad:25}])
+    // borrar la 1ra que encuentra
+    db.usuarios.deleteOne({nombre:'Lucia'})
+    db.usuarios.deleteMany({edad:24})
 
-    //
+    //update
+    db.usuarios.update({ "_id" : ObjectId("5e444d647f3b869059062b20"),{$set:{edad:27}})
+
+    db.usuarios.update({},{$set:{curso:false}},{multi:true})
+    db.usuarios.update({nombre:'Ana'},{$set...................})
+
+
     show collections
     //buscar
     db.usuarios.find()
     db.usuarios.find().limit(2)
     db.usuarios.find().pretty()
+    db.usuarios.find().sort({edad:1})--> ascendente
+    db.usuarios.find().sort({edad:-1})--> descendente
+    db.usuarios.find({edad:24,nombre:'Diego'})
+    db.usuarios.find({$or:[{nombre:'Lucia'},{edad:26}]})
+    db.usuarios.find({edad:{$gt:25}})
+    db.usuarios.find({edad:{$gte:25}})
+    db.usuarios.find({edad:{$ne:25}})
+    db.usuarios.find({edad:{$gte:25,$lte:30}})
+    db.usuarios.find().count()
+
+    //crear collections
+    db.createCollection('empleados')
+
+    // eliminar collections
+    db.empleados.drop()
 
 //node interactua con la db de mongo con una libreria por ejemplo mongose
